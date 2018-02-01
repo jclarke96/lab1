@@ -111,9 +111,15 @@ does *not* correspond to the abstract syntax above.
 Exercise 4: Draw the tree that the concrete syntax "- 5 - 3" does
 correspond to. Check it with a member of the course staff if you'd
 like.
+          -
+         / \
+        /   \ 
+       -      3
+       |
+       |
+       5
 ......................................................................*)
 
-   
 (*======================================================================
 Part 2: Types and type inference
 
@@ -124,24 +130,21 @@ expressions below? Test your solution by uncommenting the examples
 error is generated.
 ......................................................................*)
 
-(*  <--- remove this start of comment line
 
-let exercise5a : ??? = 42 ;;
+let exercise5a : int = 42 ;;
 
-let exercise5b : ??? =
+let exercise5b : string  =
   let greet y = "Hello " ^ y
   in greet "World!";;
 
-let exercise5c : ???  =
+let exercise5c : (int * float) -> int =
   fun (x, y) -> x + int_of_float y ;;
 
-let exercise5d : ??? =
+(*let exercise5d : ??? =
   fun x -> x < x + 1 ;;
 
 let exercise5e : ??? =
-  fun x -> if x then [x] else [] ;;
-
-remove this end of comment line too ----> *)
+  fun x -> if x then [x] else [] ;;*)
 
 (*======================================================================
 Part 3: First-order functional programming
@@ -170,10 +173,15 @@ to the list containing the elements 3, 4, and 5? You'll want to
 replace the "[]" with the correct functional call.
 ......................................................................*)
 
-let square_all (lst : int list) : int list =
-  failwith "square_all not implemented" ;;
+(*let square int : int =
+  fun x -> x * x ;;
 
-let exercise6 = [] ;;
+let square_all (lst : int list) : int list =
+  match lst with
+  |  [] -> 0
+  |  head :: tail ->  ;;
+
+let exercise6 = square_all([3 ; 4 ; 5]) ;;*)
 
 (*......................................................................
 Exercise 7: Define a recursive function that sums an integer
